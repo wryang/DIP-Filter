@@ -28,4 +28,3 @@ three main functions-moment, eta and phi-to modify data
 Result
 -------
 Because of time limit, the result is not perfect and there remains some mismatched numerals. But the rate of correction is up to 80%, so it is acceptable.
- 
