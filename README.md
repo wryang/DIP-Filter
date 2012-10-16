@@ -3,10 +3,11 @@ DIP-Filter
 
 Objective
 ----------
-This project aims to implement the recognition of handwritten Arabic numerals
+This project aims to implement the recognition of handwritten Arabic numerals using Geometric Invariant Moment
 
 Design
 ----------
+
 Tranning Template
 - Firstly, attain the templates of 0-9 numbers for next step
 ```matlab
@@ -20,12 +21,11 @@ Tranning Template
     Tmp = regionprops(template, 'Image', 'Centroid');
 ```
 ![Hand Written Numerals](https://dl-web.dropbox.com/get/Public/weibao/StandardNumerals.png?w=f739d96d)
-- handwritten Arabic numerals手写阿拉伯数字 
+- handwritten Arabic numerals
 ![Hand Written Numerals](https://dl-web.dropbox.com/get/Public/weibao/HandWrittenNumerals.png?w=29fb9c6b)
-采用实验图像，进行不变矩变化，并与得到的模板比较；
-and compare with standard templates
-The process mainly uses three main functions-moment, eta and phi-to modify data
-主要利用了三个函数moment， eta， phi，并利用不同的扩张值，对数据进行调整；
+
+Using Geometric Invariant Moment to modify images, attain templates and compare with standard templates
+The process mainly uses three main functions, moment, eta and phi, with dilatation value to modify data
  
 Result
 -------
