@@ -58,10 +58,19 @@ DIP-Filter
 
 - 2.12 低通处理位彩色增强
 先用默认数值进行低通/高通处理
-![ColorConvLPF](http://dl.dropbox.com/u/91146904/weibao/ColorConvLPF.png)
+````Matlab
+[width, height] = size(sourceImg);
+tempImg = zeros(width, height);
+if(strcmp(filterType,'BLPF'))
+	tempImg=Filter(sourceImg, 'BLPF', D0, 0);
+elseif(strcmp(filterType,'BHPF'))
+	tempImg=Filter(sourceImg, 'BHPF', D0, 0);
+end
+````
+> 为了使得采用蓝色分量的半径为4-20，设置蓝色分量为BBPH的截止频率为12， 带宽为16；
+> 且按照作业要求，使用图像为lena_noise.bmp;
 
-为了使得采用蓝色分量的半径为4-20，设置蓝色分量为BBPH的截止频率为12， 带宽为16；
-且按照作业要求，使用图像为lena_noise.bmp;
+![ColorConvLPF](http://dl.dropbox.com/u/91146904/weibao/ColorConvLPF.png)
 
 - 2.13 高通处理伪彩色增强
 按照作业要求，使用图像为lena_brue.bmp;
